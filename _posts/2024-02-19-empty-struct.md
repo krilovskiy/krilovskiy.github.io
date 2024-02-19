@@ -37,7 +37,7 @@ var c complex128
 fmt.Println(unsafe.Sizeof(s))	 // выведет 8
 fmt.Println(unsafe.Sizeof(c))	 // выведет 16
 ```
-https://go.dev/play/p/4mzdOKW6uQ
+[https://go.dev/play/p/4mzdOKW6uQ](https://go.dev/play/p/4mzdOKW6uQ)
 
 Ширина типа массива кратна типу его элемента.
 
@@ -45,7 +45,7 @@ https://go.dev/play/p/4mzdOKW6uQ
 var a [3]uint32
 fmt.Println(unsafe.Sizeof(a)) // prints 12
 ```
-https://play.golang.org/p/YC97xsGG73
+[https://play.golang.org/p/YC97xsGG73](https://play.golang.org/p/YC97xsGG73)
 
 Структуры обеспечивают более гибкий способ определения составных типов, 
 ширина которых равна сумме ширины составляющих их типов плюс подгонка (padding)
@@ -79,7 +79,7 @@ type S struct {
 var s S
 fmt.Println(unsafe.Sizeof(s)) // выведет 0
 ```
-https://play.golang.org/p/PyGYFmPmMt
+[https://play.golang.org/p/PyGYFmPmMt](https://play.golang.org/p/PyGYFmPmMt)
 
 # Что можно делать с пустой структурой
 В соответствии с принципом ортогональности (<i>orthogonality</i>) Go, пустая структура - это такой же тип структуры, как и любой другой. 
@@ -91,7 +91,7 @@ https://play.golang.org/p/PyGYFmPmMt
 var x [1000000000]struct{}
 fmt.Println(unsafe.Sizeof(x)) // prints 0
 ```
-https://play.golang.org/p/0lWjhSQmkc
+[https://play.golang.org/p/0lWjhSQmkc](https://play.golang.org/p/0lWjhSQmkc)
 
 Слайс `struct{}` занимает только места сколько занимает его заголовок(<i>header</i>). 
 Как было показано выше, их массив, содержащий пустые структуры не занимает места.
@@ -100,7 +100,7 @@ https://play.golang.org/p/0lWjhSQmkc
 var x = make([]struct{}, 1000000000)
 fmt.Println(unsafe.Sizeof(x)) // выведет 12 
 ```
-https://play.golang.org/p/vBKP8VQpd8
+[https://play.golang.org/p/vBKP8VQpd8](https://play.golang.org/p/vBKP8VQpd8)
 
 Все это справедливо и для подслайса (<i>subslice</i>). `len` и `cap` работают, как и ожидается.
 ```go
@@ -108,7 +108,7 @@ var x = make([]struct{}, 100)
 var y = x[:50]
 fmt.Println(len(y), cap(y)) // prints 50 100
 ```
-https://play.golang.org/p/8cO4SbrWVP
+[https://play.golang.org/p/8cO4SbrWVP](https://play.golang.org/p/8cO4SbrWVP)
 
 Вы можете получить адрес значения `struct{}`, оно [адресуемо](https://go.dev/ref/spec#Address_operators), как и любое другое значение.
 ```go
@@ -121,7 +121,7 @@ var b = &a
 var a, b struct{}
 fmt.Println(&a == &b) // true
 ```
-https://play.golang.org/p/uMjQpOOkX1
+[https://play.golang.org/p/uMjQpOOkX1](https://play.golang.org/p/uMjQpOOkX1)
 
 Это свойство также можно наблюдать для слайса пустых структур `[]struct{}`.
 ```go
@@ -130,7 +130,7 @@ b := make([]struct{}, 20)
 fmt.Println(&a == &b)       // false, a и b - это разные слайсы
 fmt.Println(&a[0] == &b[0]) // true, их внутренние массивы одинаковы
 ```
-https://play.golang.org/p/oehdExdd96
+[https://play.golang.org/p/oehdExdd96](https://play.golang.org/p/oehdExdd96)
 
 Почему так? Если задуматься, то пустые структуры не содержат полей, а значит, не могут содержать никаких данных. 
 Если пустые структуры не содержат данных, то невозможно определить, отличаются ли два значения `struct{}`. 
@@ -141,7 +141,7 @@ a := struct{}{} // не zero-value, а реально новый экземпл�
 b := struct{}{}
 fmt.Println(a == b) // true
 ```
-https://go.dev/play/p/K9qjnPiwM8
+[https://go.dev/play/p/K9qjnPiwM8](https://go.dev/play/p/K9qjnPiwM8)
 
 <i>Примечание</i>: это свойство не является обязательным в спецификации, но в ней отмечается, 
 что [две разные переменные нулевого размера могут иметь один и тот же адрес в памяти](https://golang.org/ref/spec#Size_and_alignment_guarantees).
@@ -162,7 +162,7 @@ func main() {
         b.addr() // 0x1beeb0
 }
 ```
-https://play.golang.org/p/YSQCczP-Pt
+[https://play.golang.org/p/YSQCczP-Pt](https://play.golang.org/p/YSQCczP-Pt)
 
 В этом примере показано, что адрес <i>всех</i> значений нулевого размера - `0x1beeb0`. 
 Точный адрес, вероятно, будет отличаться для разных версий Go.
