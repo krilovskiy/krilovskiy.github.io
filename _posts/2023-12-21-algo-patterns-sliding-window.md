@@ -1,8 +1,8 @@
 ---
-title: Цикл статей по алгоритмам, часть 1. Скользящее окно
+title: Алгосы от Влада, часть 1. Скользящее окно
 date: 2023-12-21 20:21:00 +0500
 categories: [Programming, Interview]
-tags: [golang, leetcode, algo, coding, grokking]
+tags: [algovlad, golang, leetcode, coding]
 ---
 
 Паттерн <b>Sliding Window</b> используется для выполнения необходимой операции над определенным размером окна 
