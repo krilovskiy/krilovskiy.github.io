@@ -1,6 +1,6 @@
 ---
 title: Объявление методов у типа T или *T
-date: 2024-02-17 20:21:00 +0500
+date: 2023-10-10 20:21:00 +0500
 categories: [Programming]
 tags: [golang]
 ---

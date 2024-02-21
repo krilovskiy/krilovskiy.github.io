@@ -1,6 +1,6 @@
 ---
 title: Пустая структура
-date: 2024-02-19 20:21:00 +0500
+date: 2023-11-19 20:21:00 +0500
 categories: [Programming]
 tags: [golang]
 ---
