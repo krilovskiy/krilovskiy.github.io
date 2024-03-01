@@ -6,6 +6,26 @@ tags: [algovlad, golang, leetcode, coding]
 ---
 
 
+* [Введение](/posts/algo-patterns/)
+* <b>Скользящее окно</b>
+* [Два указателя или итератор](/posts/algo-patterns-two-pointers/)
+* Быстрый и медленный указатель
+* Мерж интервалов
+* Циклическая сортировка
+* Инвертирование связанного списка на месте
+* Дерево BFS
+* Дерево DFS
+* Две кучи
+* Подмножества
+* Модифицированный бинарный поиск
+* Побитовый XOR
+* Лучшие элементы К (top K elements)
+* k-образный алгоритм слияния (K-Way merge)
+* 0 or 1 Knapsack (Динамическое программирование)
+* Топологическая сортировки
+
+
+
 Паттерн <b>Sliding Window</b> используется для выполнения необходимой операции над определенным размером окна 
 заданного массива или связанного списка, например, для нахождения самого длинного подмассива, 
 содержащего все 1. Скользящие окна начинаются с 1-го элемента и смещаются вправо на один элемент,
@@ -142,15 +162,15 @@ Averages of subarrays of size K: [2.2, 2.8, 2.4, 3.6, 2.8]
 
 Примеры проблем, для решения которых используется модель скользящего окна:
 
-* [https://leetcode.com/problems/maximum-subarray/](https://leetcode.com/problems/maximum-subarray/) Достаточно близко
-* [https://leetcode.com/problems/minimum-size-subarray-sum/](https://leetcode.com/problems/minimum-size-subarray-sum/)
-* [https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
-* [https://leetcode.com/problems/fruit-into-baskets/](https://leetcode.com/problems/fruit-into-baskets/)
-* [https://leetcode.com/problems/longest-substring-without-repeating-characters/](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-* [https://leetcode.com/problems/longest-repeating-character-replacement/](https://leetcode.com/problems/longest-repeating-character-replacement/)
-* [https://leetcode.com/problems/max-consecutive-ones-iii/](https://leetcode.com/problems/max-consecutive-ones-iii/)
-* [https://leetcode.com/problems/permutation-in-string/](https://leetcode.com/problems/permutation-in-string/)
-* [https://leetcode.com/problems/find-all-anagrams-in-a-string/](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-* [https://leetcode.com/problems/minimum-window-substring/](https://leetcode.com/problems/minimum-window-substring/)
-* [https://leetcode.com/problems/substring-with-concatenation-of-all-words/](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
+* Maximum Sum Subarray of Size K (easy)
+* Smallest Subarray with a given sum (easy) [Educative.io](https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ)
+* Longest Substring with K Distinct Characters (medium) [Educative.io](https://www.educative.io/courses/grokking-the-coding-interview/YQQwQMWLx80)
+* Fruits into Baskets (medium) [LeetCode](https://leetcode.com/problems/fruit-into-baskets/)
+* No-repeat Substring (hard) [LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+* Longest Substring with Same Letters after Replacement (hard) [LeetCode](https://leetcode.com/problems/longest-repeating-character-replacement/)
+* Longest Subarray with Ones after Replacement (hard) [LeetCode](https://leetcode.com/problems/max-consecutive-ones-iii/)
+* Problem Challenge 1 - Permutation in a String (hard) [Leetcode](https://leetcode.com/problems/permutation-in-string/)
+* Problem Challenge 2 - String Anagrams (hard) [Leetcode](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
+* Problem Challenge 3 - Smallest Window containing Substring (hard) [Leetcode](https://leetcode.com/problems/minimum-window-substring/)
+* Problem Challenge 4 - Words Concatenation (hard) [Leetcode](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
 
