@@ -175,7 +175,7 @@ func main() {
 Вот и все, мои дорогие папищики. Теперь мы умеем решать задачи на два указателя. 
 
 Если ты хочешь попрактиковаться, велкам.
-Вот несколько задач, в которых используется паттерн "Два указателя":
+Вот несколько задач, в которых используется этот паттерн:
 * Pair with Target Sum (easy) [LeetCode](https://leetcode.com/problems/two-sum/)
 * Remove Duplicates (easy) [LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) [LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) [LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) [LeetCode](https://leetcode.com/problems/find-the-duplicate-number/) [LeetCode](https://leetcode.com/problems/duplicate-zeros/)
 * Squaring a Sorted Array (easy) [LeetCode](https://leetcode.com/problems/squares-of-a-sorted-array/)
