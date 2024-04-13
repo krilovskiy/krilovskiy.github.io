@@ -1,4 +1,6 @@
 Примеры алгосов из заданий https://github.com/dipjul/Grokking-the-Coding-Interview-Patterns-for-Coding-Questions
+В цикле статей используется список выше
+
 
 Примеры алгосов и полезные ссылки https://gist.github.com/tykurtz/3548a31f673588c05c89f9ca42067bc4 
 

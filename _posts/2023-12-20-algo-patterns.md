@@ -10,7 +10,7 @@ tags: [algovlad, golang, leetcode, coding]
 * <b>Введение</b>
 * [Скользящее окно](/posts/algo-patterns-sliding-window/)
 * [Два указателя или итератор](/posts/algo-patterns-two-pointers/)
-* Быстрый и медленный указатель
+* [Быстрый и медленный указатель](/posts/algo-patterns-fast-slow-pointer)
 * Мерж интервалов
 * Циклическая сортировка
 * Инвертирование связанного списка на месте
