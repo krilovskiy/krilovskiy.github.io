@@ -197,7 +197,7 @@ real    0m33.755s
 Мне стало любопытно, и я запустил сборку на `c3-standard-176` (да, это 176 ядер!).
 
 ```shell
-$ time go build ./pilot/cmd/pilot-discovery
+  $ time go build ./pilot/cmd/pilot-discovery
 
 real    0m25.188s
 user    6m28.325s
@@ -207,18 +207,196 @@ sys     1m26.272s
 Немного разочаровывает - почти никакого ускорения по сравнению с 48 ядрами. 
 
 ## Кэширование
+К счастью, Go поставляется с довольно надежным кэшированием сборки из коробки:
+
+```shell
+$ run '
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+time go build -o /tmp/build2 ./pilot/cmd/pilot-discovery
+'
+real    0m32.577s
+real    0m0.810s
+real    0m4.918s
+```
+Мы видим, что последующие сборки происходят практически мгновенно - особенно если мы пишем в один и тот же файл. 
+Если мы не пишем в тот же файл, нам приходится линковать бинарник, что занимает около 5 с.
 
 ### С обновлением
 
+Приведенный выше тест не слишком реалистичен - обычно мы меняем код в промежутках между сборками:
+
+```shell
+$ run '
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+echo 'var _ = 1' >> pilot/cmd/pilot-discovery/main.go
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+echo 'var _ = 2' >> pilot/cmd/pilot-discovery/main.go
+time go build -o /tmp/build2 ./pilot/cmd/pilot-discovery
+'
+real    0m32.601s
+real    0m5.017s
+real    0m4.995s
+```
+
+Здесь мы видим, что преимущество вывода в один и тот же файл полностью утрачено, что, скорее всего, 
+является оптимизацией для полностью неизмененных сборок. Однако в остальном затраты минимальны.
+
+Однако в приведенном выше тесте мы изменяем файл, находящийся в верхней части цепочки зависимостей. 
+Все выглядит немного иначе, если мы изменим глубокую зависимость. 
+В нашем приложении пакет log используется почти везде; давайте попробуем изменить его:
+
+```shell
+$ run '
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+sed -i  's/"message"/"new"/g' pkg/log/config.go
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+'
+
+real    0m31.760s
+real    0m15.268s
+```
+
+Здесь мы видим, что времени тратится гораздо больше. Вероятно, почти каждый пакет в нашем репозитории перестраивается, 
+а зависимости кэшируются.
+
+
 ### Сохранение кэша
 
+А если мы постоянно переключаемся между ветками? Или, в случае с CI, кэширование между филиалами?
+
+```shell
+run '
+git config --global --add safe.directory /usr/local/google/home/howardjohn/go/src/istio.io/istio
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+git checkout release-1.18
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+git checkout master
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+'
+real    0m31.690s
+Switched to branch 'release-1.18'
+
+real    0m37.476s
+Switched to branch 'master'
+
+real    0m5.006s
+```
+
+Так же быстро. По крайней мере, в этом простом случае переключение между ветками не вредит кэшированию.
+
 ### Теги сборки
+Что если изменить теги сборки? Ниже я тестирую тег, который нигде не используется:
+```shell
+run '
+time go build -o /tmp/build ./pilot/cmd/pilot-discovery
+time go build -o /tmp/build -tags=nothing ./pilot/cmd/pilot-discovery
+'
+
+real    0m31.719s
+real    0m4.956s
+```
+
+Как и ожидалось, никакого влияния на кэширование
 
 ### Параллельная сборка
 
+При кэшировании в CI мы можем создавать одни и те же вещи одновременно. 
+Обычно это происходит, когда в коммите запланировано несколько заданий одновременно, и они оба создают похожие вещи.
+
+Насколько хорошо оно кэшируется?
+
+Мы ограничимся 4 ядрами, чтобы преимущества не были замаскированы высоким параллелизмом.
+
+```shell
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery'
+
+real    1m29.778s
+```
+
+```shell
+$ run-with-cores 4 '
+time go build -o /dev/null ./pilot/cmd/pilot-discovery &
+time go build -o /dev/null ./pilot/cmd/pilot-discovery &
+time wait
+'
+
+real    2m58.492s
+real    2m58.650s
+```
+
+Интересно, что это намного медленнее, чем я ожидал. 
+Это некорректный тест, поскольку мы запускаем обе сборки при одинаковом ограничении на 4 ядра CPU.
+
+Вместо этого нам нужно запускать их отдельно, но с общим кэшем:
+
+```shell
+$ function run-with-cores-cached() {
+  cores="$1"
+  shift
+  docker run --rm -v $PWD:$PWD -w $PWD \
+    --cpus="$cores" -e GOMAXPROCS="$cores" \
+    -e 'GOFLAGS=-buildvcs=false' \
+    -v `go env GOMODCACHE`:/go/pkg/mod \
+    -v /tmp/gocache:/root/.cache/go-build \
+    --init golang:1.20 bash -c "$*"
+}
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ wait
+real    1m34.677s
+real    1m36.572s
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery'
+real    0m5.163s
+```
+
+И мы видим, что при одновременном запуске кэширование практически не происходит. 
+Однако если мы сделаем еще одну сборку после этого, то увидим, что кэш работает - просто не одновременно.
+
+Это вполне объяснимо: теоретически, если при каждом выполнении выполняются одни и те же шаги за одинаковое время, 
+никакие действия не будут кэшироваться. Тем не менее я удивлен тем, насколько незначительны улучшения.
+
 #### Поэтапная сборка
 
+Что, если мы немного раздвинем сроки сборки?
+
+```shell
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ sleep 20
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ wait
+real    1m11.095s
+real    1m31.409s
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ sleep 60
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ wait
+real    1m31.126s
+real    0m30.614s
+```
+
+Мы видим тенденцию: сколько бы мы ни ждали, сборка происходит намного быстрее. 
+Это логично: мы можем либо выполнить работу по компиляции за N секунд, либо подождать, 
+пока это сделает другой процесс (тоже за N секунд), и прочитать кэшированный результат <i>незамедлительно</i>.
+
 #### Несоответствие размеров сборки
+
+Выше у нас было точно такое же распределение процессора. А что, если у нас есть несоответствие?
+
+```shell
+$ run-with-cores 40 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ run-with-cores 4 'time go build -o /dev/null ./pilot/cmd/pilot-discovery' &
+$ wait
+real    0m32.319s
+real    0m32.959s
+```
+
+И снова мы видим точно такое же время сборки, но на этот раз оно больше у самого быстрого сборщика. 
+Таким образом, наш медленный сборщик может воспользоваться преимуществами более быстрого сборщика.
+
+Интересно, что это означает, что дросселирование некоторых заданий может принести пользу. Запуск того же теста, 
+но с предоставлением каждому заданию доступа ко всем ядрам, приводит к замедлению общего времени выполнения:
+
 
 ### Конкурентность сборки
 
