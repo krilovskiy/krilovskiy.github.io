@@ -1199,7 +1199,7 @@ $ go test -race ./...
 Обычно сборки для разработки используются для локального тестирования, а сборки для релиза - для... релизов. 
 Время обоих процессов сборки важно.
 
-`[linked2-proxy](https://github.com/linkerd/linkerd2-proxy)`:
+[linked2-proxy](https://github.com/linkerd/linkerd2-proxy):
 ```shell
 $ docker run --rm -v $PWD:$PWD -w $PWD -it --init --entrypoint bash ghcr.io/linkerd/dev:v40-rust -c '
 cargo fetch
@@ -1212,7 +1212,7 @@ Finished dev [unoptimized] target(s) in 1m 43s
 Finished release [optimized] target(s) in 5m 18s
 ```
 
-`[ztunnel](https://github.com/istio/ztunnel)`:
+[ztunnel](https://github.com/istio/ztunnel):
 ```shell
 $ docker run --rm -v $PWD:$PWD -w $PWD -it --init --entrypoint bash gcr.io/istio-testing/build-tools:master-4c71169512fe79b59b89664ef1b273da813d1c93 -c '
 cargo fetch
