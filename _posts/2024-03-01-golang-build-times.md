@@ -1,6 +1,6 @@
 ---
 title: Анализ времени сборки приложений Go
-date: 2024-02-01 20:21:00 +0500
+date: 2024-03-01 20:21:00 +0500
 categories: [Programming]
 tags: [golang, build, tests, ci/cd]
 ---
