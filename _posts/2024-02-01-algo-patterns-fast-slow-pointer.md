@@ -11,7 +11,7 @@ math: true
 * [Скользящее окно](/posts/algo-patterns-sliding-window/)
 * [Два указателя или итератор](/posts/algo-patterns-two-pointers/)
 * <b>Быстрый и медленный указатель</b>
-* Мерж интервалов
+* [Мерж интервалов](/posts/algo-patterns-merge-intervals)
 * Циклическая сортировка
 * Инвертирование связанного списка на месте
 * Дерево BFS
