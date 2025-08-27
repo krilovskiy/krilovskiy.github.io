@@ -11,7 +11,7 @@ tags: [algovlad, golang, leetcode, coding]
 * [Скользящее окно](/posts/algo-patterns-sliding-window/)
 * [Два указателя или итератор](/posts/algo-patterns-two-pointers/)
 * [Быстрый и медленный указатель](/posts/algo-patterns-fast-slow-pointer)
-* [Мерж интервалов](/posts/algo-patterns-merge-intervals)
+* [Мерж интервалов](/posts/algo-patterns-merge-intervals/)
 * Циклическая сортировка
 * Инвертирование связанного списка на месте
 * Дерево BFS

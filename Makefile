@@ -13,3 +13,5 @@ build:
 				\-\-disable-external=true \
 				\-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
+copy_docs:
+	@./scripts/copy.sh "md,txt,yaml" ".bmad-creative-writing,.claude/commands/BMad" "" "$(COPY_EXCLUDE_DIRS)"
