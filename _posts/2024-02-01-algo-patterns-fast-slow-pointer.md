@@ -12,7 +12,7 @@ math: true
 * [Два указателя или итератор](/posts/algo-patterns-two-pointers/)
 * <b>Быстрый и медленный указатель</b>
 * [Мерж интервалов](/posts/algo-patterns-merge-intervals)
-* Циклическая сортировка
+* [Циклическая сортировка](/posts/algo-patterns-cyclic-sort/)
 * Инвертирование связанного списка на месте
 * Дерево BFS
 * Дерево DFS
