@@ -86,7 +86,7 @@ img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
 #avatar: https://media.licdn.com/dms/image/D5603AQHKjXZDlrnKVg/profile-displayphoto-shrink_800_800/0/1700668097289?e=1713398400&v=beta&t=w-Aih8GqSg7uStBwxOalr7mRz2PxGRL4kX3gglDKslk
-avatar: "common/avatar.png"
+avatar: "/common/avatar.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
