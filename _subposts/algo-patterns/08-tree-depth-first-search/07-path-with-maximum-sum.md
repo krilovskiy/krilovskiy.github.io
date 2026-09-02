@@ -11,6 +11,8 @@ permalink: /posts/algo-patterns-tree-depth-first-search/path-with-maximum-sum/
 
 Найдите путь с максимальной суммой в данном бинарном дереве и верните эту сумму. Путь — последовательность узлов между любыми двумя узлами; он необязательно проходит через корень.
 
+Можно считать, что дерево содержит хотя бы один узел.
+
 ![Путь с максимальной суммой 31](/assets/img/posts/2026-11-01-algo-patterns-tree-depth-first-search/path-with-maximum-sum.svg){: width="760" }
 
 ## Решение
