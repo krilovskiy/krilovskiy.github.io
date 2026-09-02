@@ -20,7 +20,7 @@ primary_task_anchor: binary-tree-path-sum
 * [Инвертирование связанного списка на месте](/posts/algo-patterns-in-place-reversal-linked-list/)
 * [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * <b>Дерево DFS</b>
-* Две кучи
+* [Две кучи](/posts/algo-patterns-two-heaps/)
 * Подмножества
 * Модифицированный бинарный поиск
 * Побитовый XOR

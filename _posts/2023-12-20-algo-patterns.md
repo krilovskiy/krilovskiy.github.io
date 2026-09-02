@@ -16,7 +16,7 @@ tags: [algovlad, golang, leetcode, coding]
 * [Инвертирование связанного списка на месте](/posts/algo-patterns-in-place-reversal-linked-list/)
 * [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * [Дерево DFS](/posts/algo-patterns-tree-depth-first-search/)
-* Две кучи
+* [Две кучи](/posts/algo-patterns-two-heaps/)
 * Подмножества
 * Модифицированный бинарный поиск
 * Побитовый XOR
@@ -46,4 +46,3 @@ tags: [algovlad, golang, leetcode, coding]
 
 Конечно-же без каких-либо копирайтов и прочего барахла. 
 Все как вы любите, <b>мои дорогие папищики</b>, самая мякотка :)
-
