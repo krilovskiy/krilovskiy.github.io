@@ -5,6 +5,10 @@ watch:
 		@echo "Watching..."
 		bundle exec jekyll s -H 127.0.0.1 -l ./ --incremental
 
+preview_future:
+		@echo "Previewing future posts..."
+		bundle exec jekyll s -H 127.0.0.1 -l ./ --incremental --future
+
 build:
 		rm -rf ./_site
 		bundle exec jekyll b -d "_site"
