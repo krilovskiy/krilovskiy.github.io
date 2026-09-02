@@ -3,6 +3,10 @@ title: Алгосы от Влада, часть 1. Скользящее окно
 date: 2023-12-21 20:21:00 +0500
 categories: [Programming, Interview]
 tags: [algovlad, golang, leetcode, coding]
+pattern: sliding-window
+short_title: Скользящее окно
+primary_task_title: Средние значения подмассивов размера k
+primary_task_anchor: subarray-averages
 ---
 
 
@@ -26,6 +30,8 @@ tags: [algovlad, golang, leetcode, coding]
 
 
 
+## Введение
+
 Паттерн <b>Sliding Window</b> используется для выполнения необходимой операции над определенным размером окна 
 заданного массива или связанного списка, например, для нахождения самого длинного подмассива, 
 содержащего все 1. Скользящие окна начинаются с 1-го элемента и смещаются вправо на один элемент,
@@ -38,6 +44,8 @@ tags: [algovlad, golang, leetcode, coding]
 
 В качестве исходных данных в задаче используется линейная структура данных, например связанный список, массив или строка.
 Вас просят найти самую длинную/короткую подстроку, подмассив или желаемое значение.
+
+## Средние значения подмассивов размера k (простой уровень) {#subarray-averages}
 
 Во многих задачах, связанных с массивом (или списком LinkedList), нас просят найти или вычислить что-то среди всех смежных подмассивов (или подсписков) заданного размера. Например, посмотрите на эту задачу:
 
@@ -94,7 +102,7 @@ func main() {
 
 И мы получаем следующий вывод: 
 ```
-Averages of subarrays of size K: [2.2, 2.8, 2.4, 3.6, 2.8]
+Averages of subarrays of size K: [2.2 2.8 2.4 3.6 2.8]
 ```
 
 <b>Временная сложность</b>: Поскольку для каждого элемента входного массива мы вычисляем сумму 
@@ -140,8 +148,8 @@ func findAverages(K int, arr []int) []float64 {
 		// скользим окном, не нужно скользить, если мы не достигли необходимого размера окна 'K'
 		if windowEnd >= K-1 {
 			result[windowStart] = float64(windowSum) / float64(K) // вычисляем среднее
-			windowSum -= arr[windowStart]                           // вычитаем элемент, выходящий за окно
-			windowStart++                                           // двигаем окно вперёд
+			windowSum -= arr[windowStart]                         // вычитаем элемент, выходящий за окно
+			windowStart++                                         // двигаем окно вперёд
 		}
 	}
 
@@ -156,15 +164,28 @@ func main() {
 
 И мы получаем следующий вывод:
 ```
-Averages of subarrays of size K: [2.2, 2.8, 2.4, 3.6, 2.8]
+Averages of subarrays of size K: [2.2 2.8 2.4 3.6 2.8]
 ```
+
+## Задачи главы
+
+1. [Средние значения подмассивов размера k (простой уровень)](#subarray-averages)
+2. [Максимальная сумма подмассива размера k (простой уровень)](/posts/algo-patterns-sliding-window/maximum-sum-subarray-size-k/)
+3. [Наименьший подмассив с заданной суммой (простой уровень)](/posts/algo-patterns-sliding-window/smallest-subarray-given-sum/)
+4. [Самая длинная подстрока с k различными символами (средний уровень)](/posts/algo-patterns-sliding-window/longest-substring-k-distinct/)
+5. [Фрукты в корзинах (средний уровень)](/posts/algo-patterns-sliding-window/fruits-into-baskets/)
+6. [Самая длинная подстрока без повторяющихся символов (сложный уровень)](/posts/algo-patterns-sliding-window/no-repeat-substring/)
+7. [Самая длинная подстрока из одинаковых букв после замен (сложный уровень)](/posts/algo-patterns-sliding-window/longest-substring-same-letters-replacement/)
+8. [Самый длинный подмассив из единиц после замен (сложный уровень)](/posts/algo-patterns-sliding-window/longest-subarray-ones-replacement/)
+9. [Перестановка строки (сложный уровень)](/posts/algo-patterns-sliding-window/permutation-in-string/)
+10. [Анаграммы строки (сложный уровень)](/posts/algo-patterns-sliding-window/string-anagrams/)
+11. [Наименьшее окно, содержащее подстроку (сложный уровень)](/posts/algo-patterns-sliding-window/smallest-window-containing-substring/)
+12. [Конкатенация слов (сложный уровень)](/posts/algo-patterns-sliding-window/words-concatenation/)
 
 
 Примеры проблем, для решения которых используется модель скользящего окна:
 
 * Maximum Sum Subarray of Size K (easy)
-* Smallest Subarray with a given sum (easy) [Educative.io](https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ)
-* Longest Substring with K Distinct Characters (medium) [Educative.io](https://www.educative.io/courses/grokking-the-coding-interview/YQQwQMWLx80)
 * Fruits into Baskets (medium) [LeetCode](https://leetcode.com/problems/fruit-into-baskets/)
 * No-repeat Substring (hard) [LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 * Longest Substring with Same Letters after Replacement (hard) [LeetCode](https://leetcode.com/problems/longest-repeating-character-replacement/)
@@ -173,4 +194,3 @@ Averages of subarrays of size K: [2.2, 2.8, 2.4, 3.6, 2.8]
 * Problem Challenge 2 - String Anagrams (hard) [Leetcode](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
 * Problem Challenge 3 - Smallest Window containing Substring (hard) [Leetcode](https://leetcode.com/problems/minimum-window-substring/)
 * Problem Challenge 4 - Words Concatenation (hard) [Leetcode](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
-
