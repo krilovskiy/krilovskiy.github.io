@@ -1,18 +1,8 @@
 ---
 title: Инвертирование каждой второй группы из k элементов
 description: Инвертирование каждой второй группы из k элементов односвязного списка.
-subpost_type: algo-task
-series: algo-patterns
 pattern: in-place-reversal-linked-list
-parent_title: Инвертирование связанного списка на месте
-parent_url: /posts/algo-patterns-in-place-reversal-linked-list/
-order: 4
-total_tasks: 5
 permalink: /posts/algo-patterns-in-place-reversal-linked-list/reverse-alternating-k-elements/
-previous_task_title: Инвертирование списка группами по k элементов
-previous_task_url: /posts/algo-patterns-in-place-reversal-linked-list/reverse-every-k-elements/
-next_task_title: Циклический сдвиг связанного списка вправо
-next_task_url: /posts/algo-patterns-in-place-reversal-linked-list/rotate-linked-list/
 ---
 
 {% include algo-task-nav.html position="top" %}

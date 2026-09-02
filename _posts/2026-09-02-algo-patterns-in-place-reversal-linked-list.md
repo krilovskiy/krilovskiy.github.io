@@ -4,6 +4,10 @@ date: 2026-09-01 20:21:00 +0500
 categories: [Programming, Interview]
 tags: [algovlad, golang, leetcode, coding]
 math: true
+pattern: in-place-reversal-linked-list
+short_title: Инвертирование связанного списка на месте
+primary_task_title: Инвертирование всего связанного списка
+primary_task_anchor: reverse-linked-list
 ---
 
 

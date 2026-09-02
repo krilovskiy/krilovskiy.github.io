@@ -1,22 +1,43 @@
+{% assign parent_post = site.posts | where: 'pattern', page.pattern | first %}
+{% assign sibling_tasks = site.subposts | where: 'pattern', page.pattern | sort: 'path' %}
+{% assign current_index = -1 %}
+{% for task in sibling_tasks %}
+  {% if task.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% assign task_number = current_index | plus: 2 %}
+{% assign total_tasks = sibling_tasks.size | plus: 1 %}
+{% assign previous_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+{% if previous_index >= 0 %}
+  {% assign previous_task = sibling_tasks[previous_index] %}
+{% endif %}
+{% assign next_task = sibling_tasks[next_index] %}
+{% assign primary_task_url = parent_post.url | append: '#' | append: parent_post.primary_task_anchor %}
+
 {% if include.position == 'top' %}
   <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4" aria-label="Навигация по задачам главы">
-    <a href="{{ page.parent_url | relative_url }}">← {{ page.parent_title }}</a>
-    <span class="text-muted">Задача {{ page.order }} из {{ page.total_tasks }}</span>
+    <a href="{{ parent_post.url | relative_url }}">← {{ parent_post.short_title | default: parent_post.title }}</a>
+    <span class="text-muted">Задача {{ task_number }} из {{ total_tasks }}</span>
   </nav>
   <hr>
 {% else %}
   <hr class="mt-5">
   <nav class="d-flex flex-column flex-sm-row justify-content-between gap-3" aria-label="Переход между задачами главы">
     <div>
-      {% if page.previous_task_url %}
-        <a href="{{ page.previous_task_url | relative_url }}">← {{ page.previous_task_title }}</a>
+      {% if previous_task %}
+        <a href="{{ previous_task.url | relative_url }}">← {{ previous_task.title }}</a>
+      {% elsif parent_post.primary_task_anchor %}
+        <a href="{{ primary_task_url | relative_url }}">← {{ parent_post.primary_task_title }}</a>
       {% endif %}
     </div>
     <div class="text-sm-end">
-      {% if page.next_task_url %}
-        <a href="{{ page.next_task_url | relative_url }}">{{ page.next_task_title }} →</a>
+      {% if next_task %}
+        <a href="{{ next_task.url | relative_url }}">{{ next_task.title }} →</a>
       {% else %}
-        <a href="{{ page.parent_url | relative_url }}">К оглавлению главы →</a>
+        <a href="{{ parent_post.url | relative_url }}">К оглавлению главы →</a>
       {% endif %}
     </div>
   </nav>

@@ -1,18 +1,8 @@
 ---
 title: Инвертирование участка связанного списка
 description: Инвертирование участка односвязного списка между позициями p и q.
-subpost_type: algo-task
-series: algo-patterns
 pattern: in-place-reversal-linked-list
-parent_title: Инвертирование связанного списка на месте
-parent_url: /posts/algo-patterns-in-place-reversal-linked-list/
-order: 2
-total_tasks: 5
 permalink: /posts/algo-patterns-in-place-reversal-linked-list/reverse-sub-list/
-previous_task_title: Инвертирование всего связанного списка
-previous_task_url: /posts/algo-patterns-in-place-reversal-linked-list/#reverse-linked-list
-next_task_title: Инвертирование списка группами по k элементов
-next_task_url: /posts/algo-patterns-in-place-reversal-linked-list/reverse-every-k-elements/
 ---
 
 {% include algo-task-nav.html position="top" %}

@@ -1,16 +1,8 @@
 ---
 title: Циклический сдвиг связанного списка вправо
 description: Циклический сдвиг односвязного списка вправо на k узлов.
-subpost_type: algo-task
-series: algo-patterns
 pattern: in-place-reversal-linked-list
-parent_title: Инвертирование связанного списка на месте
-parent_url: /posts/algo-patterns-in-place-reversal-linked-list/
-order: 5
-total_tasks: 5
 permalink: /posts/algo-patterns-in-place-reversal-linked-list/rotate-linked-list/
-previous_task_title: Инвертирование каждой второй группы из k элементов
-previous_task_url: /posts/algo-patterns-in-place-reversal-linked-list/reverse-alternating-k-elements/
 ---
 
 {% include algo-task-nav.html position="top" %}
