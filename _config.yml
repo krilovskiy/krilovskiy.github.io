@@ -180,6 +180,7 @@ defaults:
       layout: page
       comments: false
       toc: false
+      math: true
   - scope:
       path: assets/img/favicons
     values:
