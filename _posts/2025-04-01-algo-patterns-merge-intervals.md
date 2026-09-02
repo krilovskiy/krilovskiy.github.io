@@ -4,6 +4,10 @@ date: 2025-04-01 20:21:00 +0500
 categories: [Programming, Interview]
 tags: [algovlad, golang, leetcode, coding]
 math: true
+pattern: merge-intervals
+short_title: Мерж интервалов
+primary_task_title: Объединение интервалов
+primary_task_anchor: merge-intervals
 ---
 
 
@@ -47,7 +51,7 @@ math: true
 Давайте разберем нашу первую задачу, чтобы понять шаблон объединения интервалов.
 
 
-## Объединение интервалов (средний уровень сложности)
+## Объединение интервалов (средний уровень сложности) {#merge-intervals}
 
 ### Условие задачи
 Дан список интервалов. Необходимо объединить все перекрывающиеся интервалы, чтобы получить список, содержащий только взаимно эксклюзивные интервалы.
@@ -207,6 +211,17 @@ $$O(N * logN)$$, где $$N$$ — общее количество интерва
 Например, в Java (в зависимости от версии) метод `Collection.sort()` использует либо Merge sort, либо Timsort, оба из которых требуют $$O(N)$$ пространства.
 
 Итоговая пространственная сложность алгоритма составляет $$O(N)$$.
+
+
+## Задачи главы
+
+1. [Объединение интервалов (средний уровень)](#merge-intervals)
+2. [Вставка интервала (средний уровень)](/posts/algo-patterns-merge-intervals/insert-interval/)
+3. [Пересечение интервалов (средний уровень)](/posts/algo-patterns-merge-intervals/intervals-intersection/)
+4. [Конфликтующие встречи (средний уровень)](/posts/algo-patterns-merge-intervals/conflicting-appointments/)
+5. [Минимальное количество переговорных комнат (сложный уровень)](/posts/algo-patterns-merge-intervals/minimum-meeting-rooms/)
+6. [Максимальная нагрузка на процессор (сложный уровень)](/posts/algo-patterns-merge-intervals/maximum-cpu-load/)
+7. [Общее свободное время сотрудников (сложный уровень)](/posts/algo-patterns-merge-intervals/employee-free-time/)
 
 # Похожие задания
 ### 4. Pattern: Merge Intervals
