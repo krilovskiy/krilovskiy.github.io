@@ -4,6 +4,10 @@ date: 2024-01-05 20:21:00 +0500
 categories: [Programming, Interview]
 tags: [algovlad, golang, leetcode, coding]
 math: true
+pattern: two-pointers
+short_title: Два указателя
+primary_task_title: Пара с заданной суммой
+primary_task_anchor: pair-with-target-sum
 ---
 
 
@@ -47,6 +51,8 @@ $$O(N²)$$.
 В задачах, где мы имеем дело с отсортированными массивами (или LinkedLists) и должны найти набор элементов, 
 удовлетворяющих определенным ограничениям, подход Two Pointers оказывается весьма полезным. 
 Набор элементов может быть парой, триплетом или даже подмассивом.
+
+## Пара с заданной суммой (простой уровень) {#pair-with-target-sum}
 
 Например, посмотрите на следующую задачу:
 ```
@@ -173,6 +179,23 @@ func main() {
 0 2
 ```
 Вот и все, мои дорогие папищики. Теперь мы умеем решать задачи на два указателя. 
+
+## Задачи главы
+
+1. [Пара с заданной суммой (простой уровень)](#pair-with-target-sum)
+2. [Удаление дубликатов (простой уровень)](/posts/algo-patterns-two-pointers/remove-duplicates/)
+3. [Квадраты элементов отсортированного массива (простой уровень)](/posts/algo-patterns-two-pointers/squaring-a-sorted-array/)
+4. [Триплеты с нулевой суммой (средний уровень)](/posts/algo-patterns-two-pointers/triplet-sum-to-zero/)
+5. [Сумма триплета, ближайшая к целевой (средний уровень)](/posts/algo-patterns-two-pointers/triplet-sum-close-to-target/)
+6. [Триплеты с суммой меньше целевой (средний уровень)](/posts/algo-patterns-two-pointers/triplets-with-smaller-sum/)
+7. [Подмассивы с произведением меньше целевого (средний уровень)](/posts/algo-patterns-two-pointers/subarrays-product-less-than-target/)
+8. [Задача о нидерландском флаге (средний уровень)](/posts/algo-patterns-two-pointers/dutch-national-flag/)
+9. [Четвёрки с заданной суммой (средний уровень)](/posts/algo-patterns-two-pointers/quadruple-sum-to-target/)
+10. [Сравнение строк с символами возврата (средний уровень)](/posts/algo-patterns-two-pointers/comparing-strings-with-backspaces/)
+11. [Минимальное окно для сортировки (средний уровень)](/posts/algo-patterns-two-pointers/minimum-window-sort/)
+
+
+## Похожие задания
 
 Если ты хочешь попрактиковаться, велкам.
 Вот несколько задач, в которых используется этот паттерн:
