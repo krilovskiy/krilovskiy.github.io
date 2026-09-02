@@ -3,11 +3,11 @@ hooks:
 
 watch:
 		@echo "Watching..."
-		bundle exec jekyll s -H 127.0.0.1 -l ./ --incremental
+		bundle exec jekyll s -H 127.0.0.1 -l ./
 
 preview_future:
 		@echo "Previewing future posts..."
-		bundle exec jekyll s -H 127.0.0.1 -l ./ --incremental --future
+		bundle exec jekyll s -H 127.0.0.1 -l ./ --future
 
 build:
 		rm -rf ./_site
