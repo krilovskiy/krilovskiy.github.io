@@ -19,6 +19,8 @@ permalink: /posts/algo-patterns-tree-depth-first-search/path-with-given-sequence
 
 Как только значение узла не совпало с текущим элементом или последовательность закончилась раньше пути, возвращаем `false`. Совпадение считается найденным, только если одновременно достигнут лист и проверен последний элемент последовательности.
 
+Пустое дерево не содержит пути от корня до листа, поэтому для него возвращаем `false` независимо от последовательности.
+
 ## Код
 
 Вот как будет выглядеть наш алгоритм:
@@ -36,7 +38,7 @@ type TreeNode struct {
 
 func findPath(root *TreeNode, sequence []int) bool {
 	if root == nil {
-		return len(sequence) == 0
+		return false
 	}
 	return findPathRecursive(root, sequence, 0)
 }
