@@ -9,7 +9,7 @@ permalink: /posts/algo-patterns-sliding-window/longest-substring-k-distinct/
 
 ## Условие задачи
 
-Дана строка. Найдите длину самой длинной подстроки, содержащей не более `k` различных символов.
+Дана строка из ASCII-символов. Найдите длину самой длинной подстроки, содержащей не более `k` различных символов.
 
 **Пример 1:**
 
@@ -55,16 +55,16 @@ func longestSubstringWithKDistinct(text string, k int) int {
 		return 0
 	}
 
-	characters := []rune(text)
-	frequencies := make(map[rune]int)
+	frequencies := make(map[byte]int)
 	windowStart := 0
 	maxLength := 0
 
-	for windowEnd, character := range characters {
+	for windowEnd := 0; windowEnd < len(text); windowEnd++ {
+		character := text[windowEnd]
 		frequencies[character]++
 
 		for len(frequencies) > k {
-			leftCharacter := characters[windowStart]
+			leftCharacter := text[windowStart]
 			frequencies[leftCharacter]--
 			if frequencies[leftCharacter] == 0 {
 				delete(frequencies, leftCharacter)
@@ -102,6 +102,6 @@ func main() {
 
 ## Пространственная сложность
 
-Срез `characters` хранит $$N$$ рун, а частотная таблица — не более `min(N, k+1)` символов. Поэтому пространственная сложность Go-реализации равна $$O(N)$$.
+В частотной таблице хранится не более `k+1` символов, поэтому пространственная сложность равна $$O(k)$$.
 
 {% include algo-task-nav.html position="bottom" %}

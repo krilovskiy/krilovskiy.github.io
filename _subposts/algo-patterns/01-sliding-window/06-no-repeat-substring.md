@@ -9,7 +9,7 @@ permalink: /posts/algo-patterns-sliding-window/no-repeat-substring/
 
 ## Условие задачи
 
-Дана строка. Найдите длину самой длинной подстроки без повторяющихся символов.
+Дана строка из ASCII-символов. Найдите длину самой длинной подстроки без повторяющихся символов.
 
 **Пример 1:**
 
@@ -49,12 +49,12 @@ package main
 import "fmt"
 
 func noRepeatSubstring(text string) int {
-	characters := []rune(text)
-	lastIndex := make(map[rune]int)
+	lastIndex := make(map[byte]int)
 	windowStart := 0
 	maxLength := 0
 
-	for windowEnd, character := range characters {
+	for windowEnd := 0; windowEnd < len(text); windowEnd++ {
+		character := text[windowEnd]
 		if previousIndex, ok := lastIndex[character]; ok && previousIndex >= windowStart {
 			windowStart = previousIndex + 1
 		}
@@ -90,6 +90,6 @@ func main() {
 
 ## Пространственная сложность
 
-Срез `characters` занимает $$O(N)$$ памяти, а таблица последних индексов — $$O(K)$$, где $$K$$ — количество различных символов. Поскольку $$K \le N$$, общая пространственная сложность Go-реализации равна $$O(N)$$.
+Пространственная сложность равна $$O(K)$$, где $$K$$ — количество различных символов во входной строке. Если алфавит имеет фиксированный размер, эту сложность можно считать равной $$O(1)$$.
 
 {% include algo-task-nav.html position="bottom" %}

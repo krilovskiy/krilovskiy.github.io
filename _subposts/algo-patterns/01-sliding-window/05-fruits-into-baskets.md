@@ -9,7 +9,7 @@ permalink: /posts/algo-patterns-sliding-window/fruits-into-baskets/
 
 ## Условие задачи
 
-Дан массив символов, в котором каждый символ обозначает вид фруктового дерева. У вас есть две корзины, и в каждую можно складывать фрукты только одного вида.
+Дан массив ASCII-символов, в котором каждый символ обозначает вид фруктового дерева. У вас есть две корзины, и в каждую можно складывать фрукты только одного вида.
 
 Можно начать с любого дерева, но после начала нельзя пропускать деревья. Сбор заканчивается перед первым деревом третьего вида. Найдите максимальное количество фруктов, которое можно собрать в две корзины.
 
@@ -42,8 +42,8 @@ package main
 
 import "fmt"
 
-func fruitsIntoBaskets(fruits []rune) int {
-	frequencies := make(map[rune]int)
+func fruitsIntoBaskets(fruits []byte) int {
+	frequencies := make(map[byte]int)
 	windowStart := 0
 	maxFruits := 0
 
@@ -69,8 +69,8 @@ func fruitsIntoBaskets(fruits []rune) int {
 }
 
 func main() {
-	fmt.Println("Максимальное количество фруктов:", fruitsIntoBaskets([]rune{'A', 'B', 'C', 'A', 'C'}))
-	fmt.Println("Максимальное количество фруктов:", fruitsIntoBaskets([]rune{'A', 'B', 'C', 'B', 'B', 'C'}))
+	fmt.Println("Максимальное количество фруктов:", fruitsIntoBaskets([]byte{'A', 'B', 'C', 'A', 'C'}))
+	fmt.Println("Максимальное количество фруктов:", fruitsIntoBaskets([]byte{'A', 'B', 'C', 'B', 'B', 'C'}))
 }
 ```
 

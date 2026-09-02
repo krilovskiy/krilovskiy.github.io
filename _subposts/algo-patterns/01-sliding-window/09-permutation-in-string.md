@@ -9,7 +9,7 @@ permalink: /posts/algo-patterns-sliding-window/permutation-in-string/
 
 ## Условие задачи
 
-Даны строка и шаблон. Определите, содержит ли строка какую-либо перестановку символов шаблона.
+Даны строка и шаблон из ASCII-символов. Определите, содержит ли строка какую-либо перестановку символов шаблона.
 
 Перестановка получается изменением порядка символов. Например, у строки `abc` есть шесть перестановок: `abc`, `acb`, `bac`, `bca`, `cab` и `cba`.
 
@@ -61,34 +61,33 @@ package main
 import "fmt"
 
 func containsPermutation(text, pattern string) bool {
-	characters := []rune(text)
-	patternCharacters := []rune(pattern)
-	if len(patternCharacters) == 0 || len(patternCharacters) > len(characters) {
+	if len(pattern) == 0 || len(pattern) > len(text) {
 		return false
 	}
 
-	frequencies := make(map[rune]int)
-	for _, character := range patternCharacters {
+	frequencies := make(map[byte]int)
+	for index := 0; index < len(pattern); index++ {
+		character := pattern[index]
 		frequencies[character]++
 	}
 
 	windowStart := 0
 	matched := 0
 
-	for windowEnd, character := range characters {
+	for windowEnd := 0; windowEnd < len(text); windowEnd++ {
+		character := text[windowEnd]
 		if _, ok := frequencies[character]; ok {
 			frequencies[character]--
 			if frequencies[character] == 0 {
 				matched++
 			}
 		}
-
 		if matched == len(frequencies) {
 			return true
 		}
 
-		if windowEnd >= len(patternCharacters)-1 {
-			leftCharacter := characters[windowStart]
+		if windowEnd >= len(pattern)-1 {
+			leftCharacter := text[windowStart]
 			windowStart++
 			if _, ok := frequencies[leftCharacter]; ok {
 				if frequencies[leftCharacter] == 0 {
@@ -125,6 +124,6 @@ func main() {
 
 ## Пространственная сложность
 
-Срез рун исходной строки занимает $$O(N)$$ памяти, а срез рун шаблона и таблица частот — $$O(M)$$. Поэтому пространственная сложность Go-реализации равна $$O(N+M)$$.
+В худшем случае все символы шаблона различны, поэтому пространственная сложность равна $$O(M)$$.
 
 {% include algo-task-nav.html position="bottom" %}

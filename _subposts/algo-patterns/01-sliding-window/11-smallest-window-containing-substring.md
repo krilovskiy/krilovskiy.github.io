@@ -9,7 +9,7 @@ permalink: /posts/algo-patterns-sliding-window/smallest-window-containing-substr
 
 ## Условие задачи
 
-Даны строка и шаблон. Найдите наименьшую подстроку, которая содержит все символы шаблона.
+Даны строка и шаблон из ASCII-символов. Найдите наименьшую подстроку, которая содержит все символы шаблона.
 
 **Пример 1:**
 
@@ -48,38 +48,37 @@ package main
 import "fmt"
 
 func smallestWindowContainingSubstring(text, pattern string) string {
-	characters := []rune(text)
-	patternCharacters := []rune(pattern)
-	if len(characters) == 0 || len(patternCharacters) == 0 || len(patternCharacters) > len(characters) {
+	if len(text) == 0 || len(pattern) == 0 || len(pattern) > len(text) {
 		return ""
 	}
 
-	frequencies := make(map[rune]int)
-	for _, character := range patternCharacters {
+	frequencies := make(map[byte]int)
+	for index := 0; index < len(pattern); index++ {
+		character := pattern[index]
 		frequencies[character]++
 	}
 
 	windowStart := 0
 	matched := 0
-	minLength := len(characters) + 1
+	minLength := len(text) + 1
 	resultStart := 0
 
-	for windowEnd, character := range characters {
+	for windowEnd := 0; windowEnd < len(text); windowEnd++ {
+		character := text[windowEnd]
 		if _, ok := frequencies[character]; ok {
 			frequencies[character]--
 			if frequencies[character] >= 0 {
 				matched++
 			}
 		}
-
-		for matched == len(patternCharacters) {
+		for matched == len(pattern) {
 			windowLength := windowEnd - windowStart + 1
 			if windowLength < minLength {
 				minLength = windowLength
 				resultStart = windowStart
 			}
 
-			leftCharacter := characters[windowStart]
+			leftCharacter := text[windowStart]
 			windowStart++
 			if _, ok := frequencies[leftCharacter]; ok {
 				if frequencies[leftCharacter] == 0 {
@@ -90,10 +89,10 @@ func smallestWindowContainingSubstring(text, pattern string) string {
 		}
 	}
 
-	if minLength == len(characters)+1 {
+	if minLength == len(text)+1 {
 		return ""
 	}
-	return string(characters[resultStart : resultStart+minLength])
+	return text[resultStart : resultStart+minLength]
 }
 
 func main() {
@@ -117,6 +116,6 @@ abc
 
 ## Пространственная сложность
 
-Таблица частот занимает $$O(M)$$ памяти. В худшем случае результирующая подстрока занимает $$O(N)$$ памяти.
+Таблица частот занимает $$O(M)$$ памяти. Результирующая подстрока является срезом исходной строки и не требует копирования её символов.
 
 {% include algo-task-nav.html position="bottom" %}

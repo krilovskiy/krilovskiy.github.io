@@ -9,7 +9,7 @@ permalink: /posts/algo-patterns-sliding-window/words-concatenation/
 
 ## Условие задачи
 
-Даны строка и список слов одинаковой длины. Найдите все начальные индексы подстрок, которые являются конкатенацией всех заданных слов, взятых ровно по одному разу и без перекрытий.
+Даны строка из ASCII-символов и список ASCII-слов одинаковой длины. Найдите все начальные индексы подстрок, которые являются конкатенацией всех заданных слов, взятых ровно по одному разу и без перекрытий.
 
 **Пример 1:**
 
@@ -40,10 +40,7 @@ permalink: /posts/algo-patterns-sliding-window/words-concatenation/
 ```go
 package main
 
-import (
-	"fmt"
-	"unicode/utf8"
-)
+import "fmt"
 
 func findWordConcatenation(text string, words []string) []int {
 	result := []int{}
@@ -51,32 +48,31 @@ func findWordConcatenation(text string, words []string) []int {
 		return result
 	}
 
-	characters := []rune(text)
-	wordLength := utf8.RuneCountInString(words[0])
+	wordLength := len(words[0])
 	if wordLength == 0 {
 		return result
 	}
 
 	wordsCount := len(words)
 	concatenationLength := wordLength * wordsCount
-	if concatenationLength > len(characters) {
+	if concatenationLength > len(text) {
 		return result
 	}
 
 	wordFrequencies := make(map[string]int)
 	for _, word := range words {
-		if utf8.RuneCountInString(word) != wordLength {
+		if len(word) != wordLength {
 			return result
 		}
 		wordFrequencies[word]++
 	}
 
-	for start := 0; start <= len(characters)-concatenationLength; start++ {
+	for start := 0; start <= len(text)-concatenationLength; start++ {
 		seen := make(map[string]int)
 
 		for wordIndex := 0; wordIndex < wordsCount; wordIndex++ {
 			nextIndex := start + wordIndex*wordLength
-			word := string(characters[nextIndex : nextIndex+wordLength])
+			word := text[nextIndex : nextIndex+wordLength]
 			requiredCount, ok := wordFrequencies[word]
 			if !ok {
 				break
@@ -115,6 +111,6 @@ func main() {
 
 ## Пространственная сложность
 
-Срез рун и список результата занимают до $$O(N)$$ памяти, а две таблицы хранят не более $$M$$ слов. Поэтому общая пространственная сложность равна $$O(N+M)$$.
+Две таблицы хранят не более $$M$$ слов. В худшем случае список результата содержит $$O(N)$$ индексов, поэтому общая пространственная сложность равна $$O(M+N)$$.
 
 {% include algo-task-nav.html position="bottom" %}
