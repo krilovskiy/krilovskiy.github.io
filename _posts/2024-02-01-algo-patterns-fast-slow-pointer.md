@@ -4,6 +4,10 @@ date: 2024-02-01 20:21:00 +0500
 categories: [Programming, Interview]
 tags: [algovlad, golang, leetcode, coding]
 math: true
+pattern: fast-slow-pointers
+short_title: Быстрый и медленный указатель
+primary_task_title: Цикл в связанном списке
+primary_task_anchor: linked-list-cycle
 ---
 
 
@@ -40,7 +44,7 @@ math: true
 Одной из известных задач, решенных с помощью этой техники, был <b>"Поиск цикла в LinkedList"</b>. 
 Давайте рассмотрим эту задачу, чтобы понять принцип <b>Fast & Slow</b>.
 
-# Постановка задачи
+# Постановка задачи {#linked-list-cycle}
 Задав голову односвязного списка LinkedList, напишите функцию, определяющую, есть ли в LinkedList цикл или нет.
 
 ![Desktop View](/assets/img/posts/2024-02-01-algo-patterns-fast-slow-pointer/cyclic-loop.svg){: width="700" height="400" }
@@ -134,6 +138,17 @@ LinkedList has cycle: true
 
 ## Пространственная сложность 
 Алгоритм работает в постоянном пространстве $$O(1)$$.
+
+## Задачи главы
+
+1. [Цикл в связанном списке (простой уровень)](#linked-list-cycle)
+2. [Начало цикла в связанном списке (средний уровень)](/posts/algo-patterns-fast-slow-pointer/linked-list-cycle-start/)
+3. [Счастливое число (средний уровень)](/posts/algo-patterns-fast-slow-pointer/happy-number/)
+4. [Середина связанного списка (простой уровень)](/posts/algo-patterns-fast-slow-pointer/middle-of-linked-list/)
+5. [Связанный список — палиндром (средний уровень)](/posts/algo-patterns-fast-slow-pointer/palindrome-linked-list/)
+6. [Перестройка связанного списка (средний уровень)](/posts/algo-patterns-fast-slow-pointer/rearrange-linked-list/)
+7. [Цикл в циклическом массиве (сложный уровень)](/posts/algo-patterns-fast-slow-pointer/circular-array-loop/)
+
 
 # Похожие задания
 ### 2. Pattern: Fast & Slow pointers
