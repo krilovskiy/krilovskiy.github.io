@@ -1,0 +1,4 @@
+interface:
+  display_name: "Algo Patterns: дополнение"
+  short_description: "Добавление пропущенных задач в субпосты"
+  default_prompt: "Используй $algo-patterns-extend, чтобы дополнить существующую главу недостающими задачами в субпостах."

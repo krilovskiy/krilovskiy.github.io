@@ -1,0 +1,4 @@
+interface:
+  display_name: "Algo Patterns: новая глава"
+  short_description: "Создание новой главы Algo Patterns с нуля"
+  default_prompt: "Используй $algo-patterns-write, чтобы создать следующую главу Algo Patterns из локального источника."

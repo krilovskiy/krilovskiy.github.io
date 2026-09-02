@@ -1,0 +1,4 @@
+interface:
+  display_name: "Algo Patterns: ревью"
+  short_description: "Проверка статьи, перевода и Go-кода"
+  default_prompt: "Используй $algo-patterns-review, чтобы проверить главу Algo Patterns по исходнику, коду и сборке."
