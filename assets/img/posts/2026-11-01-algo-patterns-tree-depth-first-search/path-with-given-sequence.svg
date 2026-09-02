@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="390" viewBox="0 0 700 390" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+  <title id="title">Путь с заданной последовательностью</title>
+  <desc id="desc">Зелёным выделен путь 1, 1, 6, совпадающий с последовательностью.</desc>
+  <style>
+    .edge{stroke:#64748b;stroke-width:3}.path{stroke:#16a34a;stroke-width:7;stroke-linecap:round}.node{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.chosen{fill:#dcfce7;stroke:#16a34a;stroke-width:3}.value{font:700 18px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#172554;text-anchor:middle;dominant-baseline:middle}.label{font:700 18px system-ui,sans-serif;fill:#166534;text-anchor:middle}.sequence{font:700 20px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#172554;text-anchor:middle}
+  </style>
+  <text class="sequence" x="350" y="28">sequence = [1, 1, 6]</text>
+  <g fill="none">
+    <path class="edge" d="M350 98L220 162M350 98L480 162M220 198L150 262M480 198L410 262M480 198L550 262"/>
+    <path class="path" d="M350 98L480 162M480 198L410 262"/>
+  </g>
+  <g><circle class="chosen" cx="350" cy="80" r="26"/><text class="value" x="350" y="80">1</text></g>
+  <g><circle class="node" cx="220" cy="180" r="26"/><text class="value" x="220" y="180">0</text></g>
+  <g><circle class="chosen" cx="480" cy="180" r="26"/><text class="value" x="480" y="180">1</text></g>
+  <g><circle class="node" cx="150" cy="280" r="26"/><text class="value" x="150" y="280">1</text></g>
+  <g><circle class="chosen" cx="410" cy="280" r="26"/><text class="value" x="410" y="280">6</text></g>
+  <g><circle class="node" cx="550" cy="280" r="26"/><text class="value" x="550" y="280">5</text></g>
+  <text class="label" x="350" y="365">Совпадение найдено</text>
+</svg>
