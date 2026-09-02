@@ -4,6 +4,10 @@ date: 2025-08-01 20:21:00 +0500
 categories: [Programming, Interview]
 tags: [algovlad, golang, leetcode, coding]
 math: true
+pattern: cyclic-sort
+short_title: Циклическая сортировка
+primary_task_title: Циклическая сортировка
+primary_task_anchor: section-6
 ---
 
 
@@ -111,10 +115,10 @@ start
 
 **Результат:** `[1, 2, 3, 4, 5, 6]` — массив отсортирован!
 
-## Циклическая сортировка (простой уровень)
+## Циклическая сортировка (простой уровень) {#section-6}
 
 ### Условие задачи
-Нам дан массив, содержащий числа от 1 до 'n'. Массив может иметь дубликаты, что означает, что некоторые числа будут отсутствовать. Найдите все пропущенные числа.
+Дан массив из `n` различных чисел в диапазоне от `1` до `n`. Отсортируйте его на месте с помощью циклической сортировки.
 
 ### Решение
 
@@ -181,131 +185,6 @@ func main() {
 
 Пространственная сложность алгоритма равна $$O(1)$$, так как сортировка выполняется на месте без использования дополнительной памяти.
 
-## Найти пропущенное число (простой уровень)
-
-### Условие задачи
-Нам дан массив, содержащий числа от 0 до 'n', кроме одного числа. Найдите пропущенное число.
-
-### Решение
-
-```go
-package main
-
-import "fmt"
-
-func findMissingNumber(nums []int) int {
-    i := 0
-    n := len(nums)
-    
-    // Сортируем массив циклической сортировкой
-    for i < n {
-        j := nums[i]
-        if nums[i] < n && nums[i] != nums[j] {
-            nums[i], nums[j] = nums[j], nums[i]
-        } else {
-            i++
-        }
-    }
-    
-    // Находим первое число, не совпадающее со своим индексом
-    for i := 0; i < n; i++ {
-        if nums[i] != i {
-            return i
-        }
-    }
-    
-    // Если все числа на своих местах, пропущено число n
-    return n
-}
-
-// Альтернативное решение через XOR (более эффективное)
-func findMissingNumberXOR(nums []int) int {
-    n := len(nums)
-    
-    // XOR всех чисел от 0 до n
-    xor1 := 0
-    for i := 0; i <= n; i++ {
-        xor1 ^= i
-    }
-    
-    // XOR всех чисел в массиве
-    xor2 := 0
-    for i := 0; i < n; i++ {
-        xor2 ^= nums[i]
-    }
-    
-    // Результат XOR даст пропущенное число
-    return xor1 ^ xor2
-}
-
-func main() {
-    fmt.Println("Пропущенное число:", findMissingNumber([]int{4, 0, 3, 1}))
-    fmt.Println("Пропущенное число:", findMissingNumber([]int{8, 3, 5, 2, 4, 6, 0, 1}))
-    
-    fmt.Println("\nИспользуя XOR:")
-    fmt.Println("Пропущенное число:", findMissingNumberXOR([]int{4, 0, 3, 1}))
-    fmt.Println("Пропущенное число:", findMissingNumberXOR([]int{8, 3, 5, 2, 4, 6, 0, 1}))
-}
-```
-
-**Вывод:**
-```
-Пропущенное число: 2
-Пропущенное число: 7
-
-Используя XOR:
-Пропущенное число: 2
-Пропущенное число: 7
-```
-
-## Найти все пропущенные числа (простой уровень)
-
-### Условие задачи
-Нам дан несортированный массив, содержащий числа из диапазона от 1 до 'n'. Массив может иметь дубликаты, что означает, что некоторые числа будут отсутствовать. Найдите все пропущенные числа.
-
-### Решение
-
-```go
-package main
-
-import "fmt"
-
-func findAllMissingNumbers(nums []int) []int {
-    i := 0
-    for i < len(nums) {
-        j := nums[i] - 1
-        if nums[i] != nums[j] {
-            nums[i], nums[j] = nums[j], nums[i]
-        } else {
-            i++
-        }
-    }
-    
-    missingNumbers := []int{}
-    
-    for i := 0; i < len(nums); i++ {
-        if nums[i] != i+1 {
-            missingNumbers = append(missingNumbers, i+1)
-        }
-    }
-    
-    return missingNumbers
-}
-
-func main() {
-    fmt.Println("Пропущенные числа:", findAllMissingNumbers([]int{2, 3, 1, 8, 2, 3, 5, 1}))
-    fmt.Println("Пропущенные числа:", findAllMissingNumbers([]int{2, 4, 1, 2}))
-    fmt.Println("Пропущенные числа:", findAllMissingNumbers([]int{2, 3, 2, 1}))
-}
-```
-
-**Вывод:**
-```
-Пропущенные числа: [4 6 7]
-Пропущенные числа: [3]
-Пропущенные числа: [4]
-```
-
 ## Когда использовать паттерн Cyclic Sort?
 
 Этот паттерн идеально подходит для:
@@ -330,6 +209,22 @@ func main() {
 2. **Сопоставление чисел с индексами** (число 'x' должно быть по индексу 'x-1')
 3. **Обмен элементов местами**, пока каждый не окажется на правильной позиции
 4. **Выявление аномалий** (пропущенные числа, дубликаты) после сортировки
+
+<span id="section-11"></span>
+<span id="найти-пропущенное-число-простой-уровень"></span>
+<span id="section-14"></span>
+<span id="найти-все-пропущенные-числа-простой-уровень"></span>
+
+## Задачи главы
+
+1. [Циклическая сортировка (простой уровень)](#section-6)
+2. [Найти пропущенное число (простой уровень)](/posts/algo-patterns-cyclic-sort/find-missing-number/)
+3. [Найти все пропущенные числа (простой уровень)](/posts/algo-patterns-cyclic-sort/find-all-missing-numbers/)
+4. [Найти повторяющееся число (простой уровень)](/posts/algo-patterns-cyclic-sort/find-duplicate-number/)
+5. [Найти все повторяющиеся числа (простой уровень)](/posts/algo-patterns-cyclic-sort/find-all-duplicate-numbers/)
+6. [Найти повреждённую пару (простой уровень)](/posts/algo-patterns-cyclic-sort/find-corrupt-pair/)
+7. [Найти наименьшее пропущенное положительное число (средний уровень)](/posts/algo-patterns-cyclic-sort/find-smallest-missing-positive-number/)
+8. [Найти первые k пропущенных положительных чисел (сложный уровень)](/posts/algo-patterns-cyclic-sort/find-first-k-missing-positive-numbers/)
 
 # Похожие задания
 ### 5. Pattern: Cyclic Sort
