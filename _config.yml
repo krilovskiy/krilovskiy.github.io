@@ -148,6 +148,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  subposts:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
@@ -170,6 +173,13 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: subposts
+    values:
+      layout: page
+      comments: false
+      toc: false
   - scope:
       path: assets/img/favicons
     values:
