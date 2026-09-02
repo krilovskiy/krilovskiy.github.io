@@ -14,7 +14,7 @@ math: true
 * [Мерж интервалов](/posts/algo-patterns-merge-intervals/)
 * <b>Циклическая сортировка</b>
 * [Инвертирование связанного списка на месте](/posts/algo-patterns-in-place-reversal-linked-list/)
-* Дерево BFS
+* [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * Дерево DFS
 * Две кучи
 * Подмножества

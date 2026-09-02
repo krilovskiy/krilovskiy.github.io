@@ -14,7 +14,7 @@ math: true
 * [Мерж интервалов](/posts/algo-patterns-merge-intervals)
 * [Циклическая сортировка](/posts/algo-patterns-cyclic-sort/)
 * [Инвертирование связанного списка на месте](/posts/algo-patterns-in-place-reversal-linked-list/)
-* Дерево BFS
+* [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * Дерево DFS
 * Две кучи
 * Подмножества
@@ -186,4 +186,3 @@ func main() {
 * Dutch National Flag Problem (medium) [CoderByte](https://coderbyte.com/algorithm/dutch-national-flag-sorting-problem)
 * Problem Challenge 1 - Quadruple Sum to Target (medium) [Leetcode](https://leetcode.com/problems/4sum/)
 * Problem Challenge 2 - Comparing Strings containing Backspaces (medium) [Leetcode](https://leetcode.com/problems/backspace-string-compare/)
-
