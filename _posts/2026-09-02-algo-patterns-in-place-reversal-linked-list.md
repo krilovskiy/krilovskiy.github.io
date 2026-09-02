@@ -19,7 +19,7 @@ primary_task_anchor: reverse-linked-list
 * [Циклическая сортировка](/posts/algo-patterns-cyclic-sort/)
 * <b>Инвертирование связанного списка на месте</b>
 * [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
-* Дерево DFS
+* [Дерево DFS](/posts/algo-patterns-tree-depth-first-search/)
 * Две кучи
 * Подмножества
 * Модифицированный бинарный поиск

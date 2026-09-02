@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+  <title id="title">Путь с максимальной суммой</title>
+  <desc id="desc">Зелёным выделен путь 8, 5, 3, 6, 9 с суммой 31.</desc>
+  <style>
+    .edge{stroke:#94a3b8;stroke-width:3}.path{stroke:#16a34a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.node{fill:#f8fafc;stroke:#64748b;stroke-width:2}.chosen{fill:#dcfce7;stroke:#16a34a;stroke-width:3}.value{font:700 16px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#172554;text-anchor:middle;dominant-baseline:middle}.label{font:700 18px system-ui,sans-serif;fill:#166534;text-anchor:middle}
+  </style>
+  <g fill="none">
+    <path class="edge" d="M380 68L190 122M380 68L520 122M190 158L120 222M190 158L260 222M520 158L420 222M520 158L620 222M420 258L350 322M420 258L470 322M620 258L620 322"/>
+    <path class="path" d="M470 322L420 258L520 158L620 258L620 322"/>
+  </g>
+  <g><circle class="node" cx="380" cy="50" r="22"/><text class="value" x="380" y="50">1</text></g>
+  <g><circle class="node" cx="190" cy="140" r="22"/><text class="value" x="190" y="140">2</text></g>
+  <g><circle class="chosen" cx="520" cy="140" r="22"/><text class="value" x="520" y="140">3</text></g>
+  <g><circle class="node" cx="120" cy="240" r="22"/><text class="value" x="120" y="240">1</text></g>
+  <g><circle class="node" cx="260" cy="240" r="22"/><text class="value" x="260" y="240">3</text></g>
+  <g><circle class="chosen" cx="420" cy="240" r="22"/><text class="value" x="420" y="240">5</text></g>
+  <g><circle class="chosen" cx="620" cy="240" r="22"/><text class="value" x="620" y="240">6</text></g>
+  <g><circle class="node" cx="350" cy="340" r="22"/><text class="value" x="350" y="340">7</text></g>
+  <g><circle class="chosen" cx="470" cy="340" r="22"/><text class="value" x="470" y="340">8</text></g>
+  <g><circle class="chosen" cx="620" cy="340" r="22"/><text class="value" x="620" y="340">9</text></g>
+  <text class="label" x="380" y="410">8 + 5 + 3 + 6 + 9 = 31</text>
+</svg>

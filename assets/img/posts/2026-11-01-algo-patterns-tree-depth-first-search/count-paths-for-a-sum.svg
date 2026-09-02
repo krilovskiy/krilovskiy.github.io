@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="390" viewBox="0 0 700 390" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+  <title id="title">Два нисходящих пути с суммой 11</title>
+  <desc id="desc">Выделены пути 7, 4 и 1, 10, которые могут начинаться не в корне.</desc>
+  <style>
+    .edge{stroke:#94a3b8;stroke-width:3}.a-edge{stroke:#2563eb;stroke-width:7;stroke-linecap:round}.b-edge{stroke:#16a34a;stroke-width:7;stroke-linecap:round}.node{fill:#f8fafc;stroke:#64748b;stroke-width:2}.a{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.b{fill:#dcfce7;stroke:#16a34a;stroke-width:3}.value{font:700 18px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#172554;text-anchor:middle;dominant-baseline:middle}.label{font:600 17px system-ui,sans-serif;text-anchor:middle}.blue{fill:#1d4ed8}.green{fill:#166534}
+  </style>
+  <path class="edge" fill="none" d="M350 78L220 142M350 78L480 142M220 178L150 242M480 178L410 242M480 178L550 242"/>
+  <path class="a-edge" d="M220 178L150 242"/>
+  <path class="b-edge" d="M480 178L410 242"/>
+  <g><circle class="node" cx="350" cy="60" r="26"/><text class="value" x="350" y="60">12</text></g>
+  <g><circle class="a" cx="220" cy="160" r="26"/><text class="value" x="220" y="160">7</text></g>
+  <g><circle class="b" cx="480" cy="160" r="26"/><text class="value" x="480" y="160">1</text></g>
+  <g><circle class="a" cx="150" cy="260" r="26"/><text class="value" x="150" y="260">4</text></g>
+  <g><circle class="b" cx="410" cy="260" r="26"/><text class="value" x="410" y="260">10</text></g>
+  <g><circle class="node" cx="550" cy="260" r="26"/><text class="value" x="550" y="260">5</text></g>
+  <text class="label blue" x="220" y="330">7 + 4 = 11</text>
+  <text class="label green" x="480" y="330">1 + 10 = 11</text>
+</svg>

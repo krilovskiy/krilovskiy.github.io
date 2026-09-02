@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+  <title id="title">Диаметр бинарного дерева</title>
+  <desc id="desc">Зелёным выделен самый длинный путь 10, 8, 5, 3, 6, 9, 11 из семи узлов.</desc>
+  <style>
+    .edge{stroke:#94a3b8;stroke-width:3}.path{stroke:#16a34a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.node{fill:#f8fafc;stroke:#64748b;stroke-width:2}.chosen{fill:#dcfce7;stroke:#16a34a;stroke-width:3}.value{font:700 16px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#172554;text-anchor:middle;dominant-baseline:middle}.label{font:700 18px system-ui,sans-serif;fill:#166534;text-anchor:middle}
+  </style>
+  <g fill="none">
+    <path class="edge" d="M380 68L160 122M380 68L510 122M510 158L410 212M510 158L610 212M410 248L340 302M410 248L465 302M465 338L465 382M610 248L610 302M610 338L610 382"/>
+    <path class="path" d="M465 382L465 338L410 248L510 158L610 248L610 338L610 382"/>
+  </g>
+  <g><circle class="node" cx="380" cy="50" r="22"/><text class="value" x="380" y="50">1</text></g>
+  <g><circle class="node" cx="160" cy="140" r="22"/><text class="value" x="160" y="140">2</text></g>
+  <g><circle class="chosen" cx="510" cy="140" r="22"/><text class="value" x="510" y="140">3</text></g>
+  <g><circle class="chosen" cx="410" cy="230" r="22"/><text class="value" x="410" y="230">5</text></g>
+  <g><circle class="chosen" cx="610" cy="230" r="22"/><text class="value" x="610" y="230">6</text></g>
+  <g><circle class="node" cx="340" cy="320" r="22"/><text class="value" x="340" y="320">7</text></g>
+  <g><circle class="chosen" cx="465" cy="320" r="22"/><text class="value" x="465" y="320">8</text></g>
+  <g><circle class="chosen" cx="610" cy="320" r="22"/><text class="value" x="610" y="320">9</text></g>
+  <g><circle class="chosen" cx="465" cy="400" r="22"/><text class="value" x="465" y="400">10</text></g>
+  <g><circle class="chosen" cx="610" cy="400" r="22"/><text class="value" x="610" y="400">11</text></g>
+  <text class="label" x="180" y="410">Диаметр: 7 узлов</text>
+</svg>
