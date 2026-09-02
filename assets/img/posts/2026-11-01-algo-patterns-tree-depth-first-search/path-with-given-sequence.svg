@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="700" height="390" viewBox="0 0 700 390" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+<rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
   <title id="title">Путь с заданной последовательностью</title>
   <desc id="desc">Зелёным выделен путь 1, 1, 6, совпадающий с последовательностью.</desc>
   <style>

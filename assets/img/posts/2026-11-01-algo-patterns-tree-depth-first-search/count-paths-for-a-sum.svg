@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="700" height="390" viewBox="0 0 700 390" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+<rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
   <title id="title">Два нисходящих пути с суммой 11</title>
   <desc id="desc">Выделены пути 7, 4 и 1, 10, которые могут начинаться не в корне.</desc>
   <style>

@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="700" height="360" viewBox="0 0 700 360" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+<rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
   <title id="title">Путь в бинарном дереве с суммой 23</title>
   <desc id="desc">Зелёным выделен путь 12, 1, 10 от корня до листа.</desc>
   <style>

@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="title desc" style="width:100%;height:auto;background:#fff">
+<rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
   <title id="title">Путь с максимальной суммой</title>
   <desc id="desc">Зелёным выделен путь 8, 5, 3, 6, 9 с суммой 31.</desc>
   <style>
