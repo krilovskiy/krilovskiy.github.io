@@ -26,7 +26,7 @@ primary_task_anchor: subsets
 * [Побитовый XOR](/posts/algo-patterns-bitwise-xor/)
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
 * [K-way merge](/posts/algo-patterns-k-way-merge/)
-* 0 or 1 Knapsack (Динамическое программирование)
+* [Рюкзак 0/1](/posts/algo-patterns-0-1-knapsack/)
 * Топологическая сортировка
 
 

@@ -25,7 +25,7 @@ primary_task_anchor: merge-k-sorted-lists
 * [Побитовый XOR](/posts/algo-patterns-bitwise-xor/)
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
 * <b>K-way merge</b>
-* 0 or 1 Knapsack (Динамическое программирование)
+* [Рюкзак 0/1](/posts/algo-patterns-0-1-knapsack/)
 * Топологическая сортировка
 
 ## Введение
