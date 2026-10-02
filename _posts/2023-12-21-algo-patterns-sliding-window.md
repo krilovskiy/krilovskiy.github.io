@@ -22,7 +22,7 @@ tags: [algovlad, golang, leetcode, coding]
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
 * [K-way merge](/posts/algo-patterns-k-way-merge/)
 * [Рюкзак 0/1](/posts/algo-patterns-0-1-knapsack/)
-* Топологическая сортировки
+* [Топологическая сортировка](/posts/algo-patterns-topological-sort/)
 
 
 

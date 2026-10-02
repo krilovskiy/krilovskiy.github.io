@@ -23,7 +23,7 @@ tags: [algovlad, golang, leetcode, coding]
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
 * [K-way merge](/posts/algo-patterns-k-way-merge/)
 * [Рюкзак 0/1](/posts/algo-patterns-0-1-knapsack/)
-* Топологическая сортировка
+* [Топологическая сортировка](/posts/algo-patterns-topological-sort/)
 
 Процесс подготовки к собеседованиям по алгосам вызывает у многих разработчиков тревогу. 
 Нужно охватить так много материала, и зачастую, многое из этого кажется не имеющим отношения к тому, 

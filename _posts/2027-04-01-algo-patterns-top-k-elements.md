@@ -26,7 +26,7 @@ primary_task_anchor: top-k-numbers
 * <b>Лучшие K элементов</b>
 * [K-way merge](/posts/algo-patterns-k-way-merge/)
 * [Рюкзак 0/1](/posts/algo-patterns-0-1-knapsack/)
-* Топологическая сортировка
+* [Топологическая сортировка](/posts/algo-patterns-topological-sort/)
 
 ## Введение
 

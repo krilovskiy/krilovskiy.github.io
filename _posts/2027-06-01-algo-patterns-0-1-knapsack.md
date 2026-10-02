@@ -26,7 +26,7 @@ primary_task_anchor: knapsack
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
 * [K-way merge](/posts/algo-patterns-k-way-merge/)
 * <b>Рюкзак 0/1</b>
-* Топологическая сортировка
+* [Топологическая сортировка](/posts/algo-patterns-topological-sort/)
 
 ## Введение
 

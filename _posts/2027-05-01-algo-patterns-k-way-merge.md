@@ -26,7 +26,7 @@ primary_task_anchor: merge-k-sorted-lists
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
 * <b>K-way merge</b>
 * [Рюкзак 0/1](/posts/algo-patterns-0-1-knapsack/)
-* Топологическая сортировка
+* [Топологическая сортировка](/posts/algo-patterns-topological-sort/)
 
 ## Введение
 
