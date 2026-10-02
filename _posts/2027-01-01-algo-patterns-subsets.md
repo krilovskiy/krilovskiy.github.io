@@ -23,7 +23,7 @@ primary_task_anchor: subsets
 * [Две кучи](/posts/algo-patterns-two-heaps/)
 * <b>Подмножества</b>
 * [Модифицированный бинарный поиск](/posts/algo-patterns-modified-binary-search/)
-* Побитовый XOR
+* [Побитовый XOR](/posts/algo-patterns-bitwise-xor/)
 * Лучшие элементы К (top K elements)
 * k-образный алгоритм слияния (K-Way merge)
 * 0 or 1 Knapsack (Динамическое программирование)

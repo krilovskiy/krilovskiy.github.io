@@ -23,7 +23,7 @@ primary_task_anchor: order-agnostic-binary-search
 * [Две кучи](/posts/algo-patterns-two-heaps/)
 * [Подмножества](/posts/algo-patterns-subsets/)
 * <b>Модифицированный бинарный поиск</b>
-* Побитовый XOR
+* [Побитовый XOR](/posts/algo-patterns-bitwise-xor/)
 * Лучшие элементы К (top K elements)
 * k-образный алгоритм слияния (K-Way merge)
 * 0 or 1 Knapsack (Динамическое программирование)
