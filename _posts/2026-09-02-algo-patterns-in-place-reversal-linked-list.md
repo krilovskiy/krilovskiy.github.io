@@ -21,7 +21,7 @@ primary_task_anchor: reverse-linked-list
 * [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * [Дерево DFS](/posts/algo-patterns-tree-depth-first-search/)
 * [Две кучи](/posts/algo-patterns-two-heaps/)
-* Подмножества
+* [Подмножества](/posts/algo-patterns-subsets/)
 * Модифицированный бинарный поиск
 * Побитовый XOR
 * Лучшие элементы К (top K elements)

@@ -21,7 +21,7 @@ primary_task_anchor: binary-tree-path-sum
 * [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * <b>Дерево DFS</b>
 * [Две кучи](/posts/algo-patterns-two-heaps/)
-* Подмножества
+* [Подмножества](/posts/algo-patterns-subsets/)
 * Модифицированный бинарный поиск
 * Побитовый XOR
 * Лучшие элементы К (top K elements)

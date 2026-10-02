@@ -21,7 +21,7 @@ primary_task_anchor: median-of-a-number-stream
 * [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * [Дерево DFS](/posts/algo-patterns-tree-depth-first-search/)
 * <b>Две кучи</b>
-* Подмножества
+* [Подмножества](/posts/algo-patterns-subsets/)
 * Модифицированный бинарный поиск
 * Побитовый XOR
 * Лучшие элементы К (top K elements)
