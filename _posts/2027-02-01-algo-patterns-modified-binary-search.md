@@ -175,10 +175,10 @@ func main() {
 
 ### Pattern: Modified Binary Search
 
-1. Binary Search [Leetcode](https://leetcode.com/problems/binary-search/) — вариант первой задачи для массива по возрастанию без дубликатов.
-2. Find Smallest Letter Greater Than Target [Leetcode](https://leetcode.com/problems/find-smallest-letter-greater-than-target/) — следующая буква с переходом к началу массива.
-3. Find First and Last Position of Element in Sorted Array [Leetcode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) — диапазон вхождений числа.
-4. Search in Rotated Sorted Array [Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/) — поиск индекса в повёрнутом массиве без дубликатов.
-5. Search in Rotated Sorted Array II [Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) — вариация поиска с дубликатами; требуется признак наличия числа, а не его индекс.
-6. Find Minimum in Rotated Sorted Array [Leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) — поиск минимума, чей индекс используется при подсчёте поворотов; требуется значение элемента.
-7. Find Minimum in Rotated Sorted Array II [Leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) — та же связь с подсчётом поворотов, но с дубликатами; требуется значение минимума.
+1. Binary Search [Leetcode](https://leetcode.com/problems/binary-search/)
+2. Find Smallest Letter Greater Than Target [Leetcode](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)
+3. Find First and Last Position of Element in Sorted Array [Leetcode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+4. Search in Rotated Sorted Array [Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+5. Search in Rotated Sorted Array II [Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
+6. Find Minimum in Rotated Sorted Array [Leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+7. Find Minimum in Rotated Sorted Array II [Leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)
