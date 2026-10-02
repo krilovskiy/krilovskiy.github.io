@@ -18,7 +18,7 @@ primary_task_anchor: reverse-linked-list
 * [Мерж интервалов](/posts/algo-patterns-merge-intervals/)
 * [Циклическая сортировка](/posts/algo-patterns-cyclic-sort/)
 * <b>Инвертирование связанного списка на месте</b>
-* Дерево BFS
+* [Дерево BFS](/posts/algo-patterns-tree-breadth-first-search/)
 * Дерево DFS
 * Две кучи
 * Подмножества
