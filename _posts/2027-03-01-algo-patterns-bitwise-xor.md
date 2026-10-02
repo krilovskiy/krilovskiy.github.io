@@ -25,7 +25,7 @@ primary_task_anchor: single-number
 * [Модифицированный бинарный поиск](/posts/algo-patterns-modified-binary-search/)
 * <b>Побитовый XOR</b>
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
-* k-образный алгоритм слияния (K-Way merge)
+* [K-way merge](/posts/algo-patterns-k-way-merge/)
 * 0 or 1 Knapsack (Динамическое программирование)
 * Топологическая сортировка
 

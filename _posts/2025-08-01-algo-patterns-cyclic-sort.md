@@ -21,7 +21,7 @@ math: true
 * [Модифицированный бинарный поиск](/posts/algo-patterns-modified-binary-search/)
 * [Побитовый XOR](/posts/algo-patterns-bitwise-xor/)
 * [Лучшие K элементов](/posts/algo-patterns-top-k-elements/)
-* k-образный алгоритм слияния (K-Way merge)
+* [K-way merge](/posts/algo-patterns-k-way-merge/)
 * 0 or 1 Knapsack (Динамическое программирование)
 * Топологическая сортировка
 
