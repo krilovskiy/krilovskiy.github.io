@@ -22,7 +22,7 @@ primary_task_anchor: binary-tree-level-order-traversal
 * [Дерево DFS](/posts/algo-patterns-tree-depth-first-search/)
 * [Две кучи](/posts/algo-patterns-two-heaps/)
 * [Подмножества](/posts/algo-patterns-subsets/)
-* Модифицированный бинарный поиск
+* [Модифицированный бинарный поиск](/posts/algo-patterns-modified-binary-search/)
 * Побитовый XOR
 * Лучшие элементы К (top K elements)
 * k-образный алгоритм слияния (K-Way merge)
